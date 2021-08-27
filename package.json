@@ -1,0 +1,28 @@
+{
+  "name": "extension-for-spotify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "concurrently": "^6.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "cd server && nodemon index",
+    "client": "cd client && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "cd client && npm install && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Borys35/extension-for-spotify.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Borys35/extension-for-spotify/issues"
+  },
+  "homepage": "https://github.com/Borys35/extension-for-spotify#readme"
+}

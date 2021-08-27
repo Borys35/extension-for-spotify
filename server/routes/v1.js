@@ -2,6 +2,12 @@ const router = require("express").Router();
 const lyricsFinder = require("lyrics-finder");
 const SpotifyWebApi = require("spotify-web-api-node");
 
+const spotifyCredentials = {
+  clientId: process.env.SPOTIFY_CLIENT_ID,
+  clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
+  redirectUri: process.env.SPOTIFY_REDIRECT_URI,
+};
+
 let sotdId = "0KGEPwo7mRkU1awGHfkUSt";
 
 router.post("/refresh", (req, res) => {
