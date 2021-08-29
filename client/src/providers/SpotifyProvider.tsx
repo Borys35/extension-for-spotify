@@ -34,7 +34,7 @@ const SpotifyProvider: FC = ({ children }) => {
       setMe(data.body);
     });
 
-    axios.get("api/v1/sotdId").then(({ data }) => {
+    axios.get("/api/v1/sotdId").then(({ data }) => {
       spotifyApi.getTrack(data.sotdId).then((data) => {
         setSotd(data.body);
       });

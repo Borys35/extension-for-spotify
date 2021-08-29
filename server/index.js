@@ -9,12 +9,14 @@ const PORT = process.env.PORT || 8080;
 
 app.use(express.json());
 app.use(cors());
-app.use("/api/v1", apiv1);
+app.use("/api/v1/", apiv1);
 
 if (
   process.env.NODE_ENV === "production" ||
-  process.env.NODE_ENV === "staging"
+  process.env.NODE_ENV === "staging" ||
+  1 === 1
 ) {
+  console.log("PATH", path.join(__dirname, "../client/build"));
   app.use(express.static(path.join(__dirname, "../client/build")));
 
   app.get("*", function (req, res) {

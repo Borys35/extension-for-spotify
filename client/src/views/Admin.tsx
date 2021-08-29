@@ -47,7 +47,7 @@ const Admin = () => {
     e.preventDefault();
 
     axios
-      .post("api/v1/sotdId", { sotdId, password })
+      .post("/api/v1/sotdId", { sotdId, password })
       .then(({ data }) => {
         const { sotdId } = data;
         spotifyApi.getTrack(sotdId).then((data: any) => {

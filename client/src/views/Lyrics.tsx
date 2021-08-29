@@ -23,7 +23,7 @@ const Lyrics = () => {
 
       const { name, artists } = playerState;
       const artistsString = artists.join(", ");
-      const res = await axios.post("api/v1/lyrics", {
+      const res = await axios.post("/api/v1/lyrics", {
         artists: artistsString,
         name,
         cancelToken: source.token,

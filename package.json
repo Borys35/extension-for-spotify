@@ -16,6 +16,7 @@
     "server": "cd server && nodemon index",
     "client": "cd client && npm start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "postinstall": "tsc",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "repository": {

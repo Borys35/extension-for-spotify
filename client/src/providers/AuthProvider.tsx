@@ -50,7 +50,10 @@ const AuthProvider: FC = ({ children }) => {
         setExpiresIn(data.expiresIn);
         setLoading(false);
       })
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        console.error(err);
+        setLoading(false);
+      });
   }, []);
 
   useEffect(() => {
@@ -62,7 +65,7 @@ const AuthProvider: FC = ({ children }) => {
     setLoading(true);
 
     axios
-      .post("api/v1/login", { code })
+      .post("/api/v1/login", { code })
       .then(({ data }) => {
         setAccessToken(data.accessToken);
         setRefreshToken(data.refreshToken);
@@ -72,7 +75,10 @@ const AuthProvider: FC = ({ children }) => {
 
         setLoading(false);
       })
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        console.error(err);
+        setLoading(false);
+      });
   }, [location.search, accessToken]);
 
   useEffect(() => {
@@ -80,7 +86,7 @@ const AuthProvider: FC = ({ children }) => {
 
     const interval = setInterval(() => {
       axios
-        .post("api/v1/refresh", { refreshToken })
+        .post("/api/v1/refresh", { refreshToken })
         .then(({ data }) => {
           setAccessToken(data.accessToken);
           setExpiresIn(data.expiresIn);
