@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Button from "../components/Button";
 import Heading from "../components/Heading";
+import Centered from "../components/Centered";
 import theme from "../styles/theme";
 
 const AUTH_URL =
@@ -9,13 +10,7 @@ const AUTH_URL =
   "response_type=code&" +
   "client_id=51fe8697736c45858e634df10a31832b&" +
   `redirect_uri=${window.location.protocol}//${window.location.hostname}&` +
-  "scope=streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state%20user-top-read";
-
-const Centered = styled.div`
-  display: grid;
-  place-items: center;
-  height: 100%;
-`;
+  "scope=streaming%20user-read-email%20user-read-private%20user-read-playback-state%20user-modify-playback-state%20user-top-read";
 
 const Wrapper = styled.div`
   display: flex;
