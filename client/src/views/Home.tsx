@@ -80,7 +80,10 @@ const Home = () => {
       <Section>
         <Heading>Some links</Heading>
         <ButtonsContainer>
-          <Button href="https://github.com" target="_blank">
+          <Button
+            href="https://github.com/Borys35/extension-for-spotify"
+            target="_blank"
+          >
             Source code
           </Button>
           <Button

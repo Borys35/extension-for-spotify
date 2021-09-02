@@ -52,12 +52,12 @@ function App() {
           <div>
             <Heading>Window is too small</Heading>
             {width < minWidth && (
-              <Text>
+              <Text style={{marginTop: '1rem'}}>
                 Width is {width}px and must be at least {minWidth}px
               </Text>
             )}
             {height < minHeight && (
-              <Text>
+              <Text style={{marginTop: '1rem'}}>
                 Height is {height}px and must be at least {minHeight}px
               </Text>
             )}
